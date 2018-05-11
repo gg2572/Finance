@@ -5,6 +5,10 @@ import sys
 sys.path.append('/Users/ggao/Documents/Finance')
 
 from GetOldTweets import got
+import json
+with open('/Users/ggao/.twitter_keys.json', 'r') as input_file:
+    twitter_keys = json.load(input_file)
+
 # try:
 # tso = TwitterSearchOrder() # create a TwitterSearchOrder object
 # tso.set_keywords(['microsoft', 'windows', 'msft'], or_operator=True) # let's define all words we would like to have a look for
@@ -18,10 +22,10 @@ from GetOldTweets import got
 
 # it's about time to create a TwitterSearch object with our secret tokens
 # ts = TwitterSearch(
-#     consumer_key = 'g68qvJGL9aX5DUGoenDWHVP3G',
-#     consumer_secret = 'Be6KnDJtWj0pLzKWr32O9bAcIT0aBZGGkbJXEMKf55r8I42iKs',
-#     access_token = '697606372175773696-2StX2BGY5t1juWuMyG9nq7s4EJWSaKn',
-#     access_token_secret = 'ZPehhQQcABru0z8NcoXzT5uwGeKpmEBXuQmquFAJ16VQT'
+#     consumer_key = twitter_keys['consumer_key'],
+#     consumer_secret = twitter_keys['consumer_secret'],
+#     access_token = twitter_keys['access_token'],
+#     access_token_secret = twitter_keys['access_token_secret']
 #  )
 #
 #  # this is where the fun actually starts :)
